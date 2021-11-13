@@ -1,0 +1,11 @@
+// Convert px to em
+
+@use 'sass:math';
+$font: 16;
+
+@function em($pixels, $context: $font) {
+	@return #{math.div($pixels, $context)}em;
+}
+@function rem($pixels, $context: $font) {
+	@return #{math.div($pixels, $context)}rem;
+}
