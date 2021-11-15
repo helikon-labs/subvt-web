@@ -40,7 +40,10 @@ const paths = {
 		watch: './src/js/**/*.js'
 	},
 	images: {
-		src: './src/img/**/*.{png,jpg,jpeg,svg}',
+		src: [
+			'./src/img/**/*.{png,jpg,jpeg,svg}',
+			'!./src/img/favicon'
+		],
 		dist: './dist/img/',
 		watch: './src/img/**/*.{png,jpg,jpeg,svg}'
 	},
@@ -51,7 +54,7 @@ const paths = {
 	},
 	favicon: {
 		src: './src/img/favicon/*',
-		dist: './dist/img/'
+		dist: './dist/img/favicon/'
 	},
 	fonts: {
 		src: './src/fonts/**/*.{ttf,woff,eot,svg}',

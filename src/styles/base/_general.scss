@@ -27,37 +27,122 @@
 }
 
 @include placeholder {
-	color: $color-black;
+	color: $color-white;
 }
 
 * {
 	box-sizing: border-box;
 }
 
-body {
+::selection {
 	color: $color-black;
-	font-family: $font-primary;
+	background-color: rgba($color-secondary, 0.8);
 }
 
-img {
-	width: auto;
-	max-width: 100%;
+::selection {
+	color: $color-black;
+	background-color: rgba($color-secondary, 0.8);
+}
+
+html {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+body {
+	@include media-breakpoint-up(lg) {
+		background-size: 100%;
+	}
+	@include media-breakpoint-down(md) {
+		background-size: 800px auto;
+	}
+
+	color: $color-white;
+	font-family: $font-primary;
+	background-color: $color-bg;
+	background-image: url('img/bg.jpg');
+	background-repeat: no-repeat;
+	background-position: 50% 0;
 }
 
 a {
-	color: inherit;
 	text-decoration: none;
 	outline: none;
 	transition: all 0.15s linear;
 
-	&:focus {
-		box-shadow: 0 0 0 2px rgba($color-primary, 0.4);
+	&:focus-visible {
+		box-shadow: 0 0 0 3px rgba($color-secondary, 0.5);
+	}
+}
+
+p {
+	@include media-breakpoint-down(lg) {
+		font-size: rem(16);
+	}
+	@include media-breakpoint-down(md) {
+		font-size: rem(14);
 	}
 
-	&:hover,
-	&:focus {
-		color: $color-primary;
+	margin: 1rem 0;
+	color: $color-grey;
+	font-weight: 300;
+	font-size: rem(18);
+	line-height: 150%;
+
+	&.large {
+		@include media-breakpoint-down(md) {
+			font-size: rem(18);
+		}
+
+		color: $color-white;
+		font-size: rem(24);
 	}
+}
+
+.paragraph {
+	p {
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	line-height: 125%;
+}
+
+h1 {
+	@include media-breakpoint-down(md) {
+		font-size: rem(32);
+	}
+
+	font-size: rem(50);
+}
+
+h2 {
+	@include media-breakpoint-down(lg) {
+		font-size: rem(38);
+	}
+	@include media-breakpoint-down(md) {
+		font-size: rem(28);
+	}
+
+	font-size: rem(42);
+}
+
+h3 {
+	font-size: rem(18);
 }
 
 .icon {
@@ -67,45 +152,46 @@ a {
 }
 
 .btn {
+	@include media-breakpoint-down(md) {
+		padding: 8px 16px;
+	}
+
 	@extend %btn-reset;
 
+	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
+	padding: 12px 24px;
+	background-color: $color-primary;
+	border-radius: 12px;
+	box-shadow: 0 22px 30px -13px rgba($color-primary, 0.5);
 	transition: all 0.15s linear;
 
-	&:disabled {
-		filter: grayscale(100%) opacity(0.5);
-		pointer-events: none;
+	img {
+		@include media-breakpoint-down(md) {
+			width: auto;
+			height: 30px;
+		}
 	}
 
-	&-primary {
-		@include media-breakpoint-down(md) {
+	&:hover,
+	&:focus {
+		background-color: $color-primary-darken;
+		box-shadow: 0 16px 30px -13px rgba($color-primary, 0.5);
+	}
+
+	&:active {
+		box-shadow: 0 16px 30px -13px rgba($color-primary, 0.5);
+	}
+}
+
+// Bootstrap
+
+.hstack {
+	.btn {
+		@include media-breakpoint-down(sm) {
 			width: 100%;
-			padding-right: 20px;
-			padding-left: 20px;
-			font-size: rem(16);
-		}
-
-		position: relative;
-		padding: 18px 40px;
-		color: #fff;
-		font-weight: 700;
-		font-size: rem(20);
-		text-transform: uppercase;
-		background-color: $color-primary;
-
-		&:active {
-			background-color: darken($color-primary, 20%);
-		}
-
-		&:hover,
-		&:focus {
-			color: #fff;
-			background-color: darken($color-primary, 10%);
-			box-shadow: none;
-			transform: translateY(2px);
 		}
 	}
 }

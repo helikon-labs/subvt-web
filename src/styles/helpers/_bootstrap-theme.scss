@@ -1,8 +1,8 @@
 $spacers: (
 	0: 0,
-	1: 10px,
-	2: 20px,
-	3: 30px,
+	1: 16px,
+	2: 24px,
+	3: 32px,
 	4: 40px,
 	5: 50px
 );
@@ -12,13 +12,13 @@ $grid-breakpoints: (
 	md: 768px,
 	lg: 992px,
 	xl: 1200px,
-	xxl: 1400px
+	xxl: 1366px
 );
 $container-max-widths: (
 	sm: 540px,
-	md: 720px,
+	md: 728px,
 	lg: 960px,
 	xl: 1140px,
-	xxl: 1320px
+	xxl: 1324px
 );
-$grid-gutter-width: 1.5rem;
+$grid-gutter-width: 2.5rem;

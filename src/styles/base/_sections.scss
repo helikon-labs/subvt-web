@@ -1,0 +1,283 @@
+.header {
+	@include media-breakpoint-down(lg) {
+		top: 40px;
+	}
+	@include media-breakpoint-down(md) {
+		top: 20px;
+	}
+
+	position: absolute;
+	top: 100px;
+	right: 0;
+	left: 0;
+
+	&__logotype {
+		display: inline-flex;
+
+		img {
+			@include media-breakpoint-down(md) {
+				width: auto;
+				height: 24px;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			opacity: 0.8;
+		}
+	}
+}
+
+.section {
+	@include media-breakpoint-up(lg) {
+		height: 100vh;
+		height: calc(var(--vh, 1vh) * 100);
+		min-height: 768px;
+		max-height: 1080px;
+		padding: 100px 0;
+	}
+	@include media-breakpoint-down(lg) {
+		margin: 125px 0;
+	}
+	@include media-breakpoint-down(md) {
+		margin: 60px 0;
+	}
+
+	.container,
+	.row {
+		height: 100%;
+	}
+
+	&-1 {
+		@include media-breakpoint-only(md) {
+			height: 100vh;
+			height: calc(var(--vh, 1vh) * 100);
+			min-height: 968px;
+			max-height: 1080px;
+			padding: 195px 0;
+		}
+		@include media-breakpoint-down(md) {
+			padding: 85px 0;
+		}
+		@include media-breakpoint-down(sm) {
+			height: 100vh;
+			height: calc(var(--vh, 1vh) * 100);
+			min-height: 530px;
+			max-height: 568px;
+			padding-bottom: 20px;
+		}
+
+		margin: 0;
+		padding: 255px 0;
+
+		.container,
+		.row {
+			@include media-breakpoint-down(lg) {
+				height: initial;
+			}
+			@include media-breakpoint-down(sm) {
+				height: 100%;
+			}
+		}
+
+		&__shape {
+			@include media-breakpoint-down(lg) {
+				top: initial;
+			}
+			@include media-breakpoint-down(md) {
+				top: 210px;
+			}
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: -2;
+			height: 1200px;
+			overflow: hidden;
+
+			img {
+				@include media-breakpoint-up(xxl) {
+					width: 58vw;
+					max-width: 1120px;
+				}
+				@include media-breakpoint-down(xl) {
+					right: -300px;
+				}
+				@include media-breakpoint-down(lg) {
+					top: 60px;
+					right: -175px;
+					transform: scale(0.8);
+					transform-origin: 100% 0;
+				}
+				@include media-breakpoint-down(md) {
+					right: -75px;
+					transform: scale(0.4);
+				}
+
+				position: absolute;
+				top: 150px;
+				right: -250px;
+				display: block;
+			}
+		}
+	}
+
+	&-2 {
+		@include media-breakpoint-up(lg) {
+			padding-top: 190px;
+		}
+		@include media-breakpoint-down(lg) {
+			margin-top: 165px;
+		}
+		@include media-breakpoint-down(md) {
+			margin-top: 100px;
+		}
+
+		overflow: hidden;
+	}
+
+	&-3 {
+		@include media-breakpoint-down(lg) {
+			background-size: 450px auto;
+		}
+		@include media-breakpoint-down(md) {
+			background-position: calc(50% - 60px) 0;
+			background-size: 360px;
+		}
+
+		background-image: url('img/bg-blur-blue-1.svg');
+		background-repeat: no-repeat;
+		background-position: 75% 60%;
+	}
+}
+
+.js-marquee,
+.js-marquee-wrapper {
+	display: flex;
+}
+
+.marquee {
+	display: flex;
+
+	&__item {
+		@include media-breakpoint-down(lg) {
+			width: 190px;
+			height: 190px;
+		}
+		@include media-breakpoint-down(md) {
+			width: 156px;
+			height: 156px;
+		}
+
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		width: 238px;
+		height: 238px;
+
+		img {
+			display: block;
+			width: 70%;
+			height: 70%;
+			object-fit: contain;
+			object-position: 50% 50%;
+		}
+	}
+}
+
+.mockup {
+	$m: &;
+
+	position: relative;
+	display: inline-flex;
+
+	img {
+		display: block;
+	}
+
+	&__main {
+		display: inline-flex;
+		overflow: hidden;
+		border-radius: 15px;
+		box-shadow: 0 0 0 4px #0e2938;
+
+		img {
+			@include media-breakpoint-down(lg) {
+				width: 190px;
+				height: auto;
+			}
+			@include media-breakpoint-down(md) {
+				width: 170px;
+			}
+		}
+	}
+
+	&__items {
+		@include media-breakpoint-down(lg) {
+			top: -70px;
+			right: -30px;
+			bottom: -70px;
+			left: -30px;
+			transform: scale(0.75);
+		}
+		@include media-breakpoint-down(md) {
+			top: -105px;
+			right: -55px;
+			bottom: -105px;
+			left: -55px;
+			transform: scale(0.65);
+		}
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		transform-origin: 50% 50%;
+
+		> * {
+			position: absolute;
+		}
+	}
+
+	&-1 {
+		#{$m}__items {
+			> * {
+				&:nth-child(1) {
+					@include media-breakpoint-down(md) {
+						top: -5%;
+						left: 85%;
+					}
+
+					top: -6%;
+					left: 73%;
+				}
+
+				&:nth-child(2) {
+					@include media-breakpoint-down(md) {
+						left: -8%;
+					}
+
+					top: 36%;
+					left: -12%;
+				}
+
+				&:nth-child(3) {
+					@include media-breakpoint-down(md) {
+						left: -26%;
+					}
+
+					top: 55%;
+					left: -45%;
+				}
+
+				&:nth-child(4) {
+					top: 65%;
+					left: 85%;
+				}
+			}
+		}
+	}
+}
