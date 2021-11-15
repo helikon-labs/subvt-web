@@ -22,7 +22,9 @@
       "except": ["first-nested"]
     }],
     "order/order": [
-      "custom-properties", {
+      "custom-properties",
+      "dollar-variables",
+      {
         "type": "at-rule",
         "name": "include"
       },

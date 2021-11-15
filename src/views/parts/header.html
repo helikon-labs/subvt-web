@@ -18,12 +18,33 @@
     <!-- Style -->
     <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+<body class="@@bodyClass">
 
-<header class="header">
+<div class="panel">
     <div class="container">
-        <div class="row">
-            <div class="col-xxl-10 offset-xxl-1">
+        <a href="/" class="panel__logotype">
+            <img width="125" height="34" src="img/logotype.svg" alt="SubVT logotype">
+        </a>
+    </div>
+</div>
+
+<div class="panel panel--place-bottom">
+    <div class="container">
+        <div class="hstack justify-content-center gap-1">
+            <a href="#" class="btn">
+                <img width="141" height="45" src="img/app-store.svg" alt="App Store logotype">
+            </a>
+            <a href="#" class="btn">
+                <img width="149" height="45" src="img/google-play.svg" alt="Google Play logotype">
+            </a>
+        </div>
+    </div>
+</div>
+
+<header class="header" data-aos="fade">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xxl-@@col">
                 <a href="/" class="header__logotype">
                     <img width="125" height="34" src="img/logotype.svg" alt="SubVT logotype">
                 </a>

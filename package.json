@@ -52,6 +52,8 @@
     "yargs": "^17.2.1"
   },
   "dependencies": {
+    "aos": "^2.3.4",
+    "basicscroll": "^3.0.4",
     "bootstrap": "^5.1.3",
     "normalize.css": "^8.0.1",
     "vanilla-marquee": "^1.1.1"
