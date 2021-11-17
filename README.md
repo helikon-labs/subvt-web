@@ -1,2 +1,4 @@
-# SubVT | Верстка
-Для сборки проекта, нужно установить все пакеты `npm i`, а затем выполнить `npm run build`
+# SubVT Landing Page
+Steps for build project:
+1. `npm i`
+2. `npm run build`
