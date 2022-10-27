@@ -79,3 +79,13 @@ if (section_2 && section_6) {
         }
     }, false);
 }
+
+(function () {
+    let buttons = document.getElementsByClassName('store-button');
+    for(var i = 0; i < buttons.length; i++){
+        buttons[i].onclick = function() {
+            alert("Coming soon™.");
+            return false;
+        }
+    }
+})();

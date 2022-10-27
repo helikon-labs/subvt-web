@@ -95,26 +95,26 @@
 
 			img {
 				@include media-breakpoint-up(xxl) {
-					width: 58vw;
-					max-width: 1120px;
+					width: 120vw;
+					max-width: 1820px;
+                    right: -1000px;
 				}
 				@include media-breakpoint-down(xl) {
-					right: -300px;
 				}
 				@include media-breakpoint-down(lg) {
 					top: 60px;
-					right: -175px;
 					transform: scale(0.8);
 					transform-origin: 100% 0;
 				}
 				@include media-breakpoint-down(md) {
-					right: -75px;
+					right: -175px;
 					transform: scale(0.4);
 				}
 
 				position: absolute;
-				top: 150px;
-				right: -250px;
+                width: 110vw;
+				top: 160px;
+				right: -750px;
 				display: block;
 				transition: all 1s ease-out;
 			}
