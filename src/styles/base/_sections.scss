@@ -57,6 +57,7 @@
 			padding: 85px 0;
 		}
 		@include media-breakpoint-down(sm) {
+			position: relative;
 			height: 100vh;
 			height: calc(var(--vh, 1vh) * 100);
 			min-height: 530px;
@@ -82,7 +83,8 @@
 				top: initial;
 			}
 			@include media-breakpoint-down(md) {
-				top: 210px;
+				top: 0;
+				height: 100%;
 			}
 
 			position: absolute;
@@ -95,28 +97,46 @@
 
 			img {
 				@include media-breakpoint-up(xxl) {
+					right: -1000px;
 					width: 120vw;
 					max-width: 1820px;
-                    right: -1000px;
-				}
-				@include media-breakpoint-down(xl) {
 				}
 				@include media-breakpoint-down(lg) {
-					top: 60px;
-					transform: scale(0.8);
+					top: 100px;
+					right: -410px;
 					transform-origin: 100% 0;
 				}
 				@include media-breakpoint-down(md) {
-					right: -175px;
-					transform: scale(0.4);
+					top: 230px;
+				}
+				@include media-breakpoint-down(sm) {
+					top: 55%;
+					left: 30%;
+					transform: scale(1.3);
+					transform-origin: 0 25%;
 				}
 
 				position: absolute;
-                width: 110vw;
 				top: 160px;
 				right: -750px;
 				display: block;
+				width: 110vw;
 				transition: all 1s ease-out;
+			}
+
+			&::after {
+				@include media-breakpoint-down(lg) {
+					height: 200px;
+				}
+
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height: 300px;
+				background: linear-gradient(180deg, rgba(4, 26, 38, 0) 0%, #041a26 53.61%);
+				content: '';
+				pointer-events: none;
 			}
 
 			&[data-aos]:not(.aos-init) {
