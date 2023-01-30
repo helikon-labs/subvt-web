@@ -81,7 +81,7 @@ if (section_2 && section_6) {
 }
 
 (function () {
-    let buttons = document.getElementsByClassName('store-button');
+    let buttons = document.getElementsByClassName('store-button-soon');
     for(var i = 0; i < buttons.length; i++){
         buttons[i].onclick = function() {
             alert("Coming soon™.");
